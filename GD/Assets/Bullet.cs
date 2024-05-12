@@ -17,8 +17,10 @@ public class Bullet : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+        if (gameObject.name!="Cube") {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
